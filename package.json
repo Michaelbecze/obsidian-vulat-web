@@ -1,0 +1,17 @@
+{
+  "name": "obsidian-vault-web",
+  "version": "1.0.0",
+  "description": "View and edit an Obsidian vault stored in a GitHub repo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "marked": "^18.0.14"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

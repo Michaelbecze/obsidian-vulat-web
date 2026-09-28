@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vault</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 5 9l2 15 9 6 9-6 2-15z' fill='%237c5cff'/></svg>">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="side-head">
+        <div class="vault-name" id="vaultName">Vault</div>
+        <div class="side-actions">
+          <button class="icon" id="newNoteBtn" title="New note">＋</button>
+          <button class="icon" id="refreshBtn" title="Pull latest from GitHub">⟳</button>
+        </div>
+      </div>
+      <input id="filter" type="search" placeholder="Filter files…" autocomplete="off">
+      <nav id="tree" aria-label="Vault files"></nav>
+      <div class="side-foot" id="repoInfo"></div>
+    </aside>
+    <div id="scrim"></div>
+
+    <main id="main">
+      <header id="toolbar">
+        <button class="icon only-mobile" id="menuBtn" title="Files">☰</button>
+        <div id="crumbs"></div>
+        <span id="status" aria-live="polite"></span>
+        <div class="modes" role="tablist">
+          <button data-mode="read" class="mode active">Read</button>
+          <button data-mode="edit" class="mode">Edit</button>
+          <button data-mode="split" class="mode hide-mobile">Split</button>
+        </div>
+        <button id="saveBtn" class="primary" disabled title="Save (Ctrl/Cmd+S)">Save</button>
+        <button class="icon" id="deleteBtn" title="Delete note" disabled>🗑</button>
+      </header>
+
+      <section id="content" class="read">
+        <div id="editorPane"><textarea id="editor" spellcheck="true" placeholder="Start writing…"></textarea></div>
+        <div id="previewPane"><article id="preview" class="markdown"></article></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="vendor/marked.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
