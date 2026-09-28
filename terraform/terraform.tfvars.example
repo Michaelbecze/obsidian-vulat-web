@@ -1,0 +1,25 @@
+# Copy to terraform.tfvars and fill in, or set the matching TF_VAR_* env vars.
+# terraform.tfvars is gitignored so the token never gets committed.
+
+resource_group_name = "rg-vault-web"
+location             = "centralus"
+app_name             = "vault-web-michael" # must be globally unique
+sku_name             = "F1"                # F1 = free; B1 avoids cold starts
+
+github_repo   = "Michaelbecze/Obsidian"
+github_branch = "main"
+
+# Prefer: export TF_VAR_github_token=github_pat_xxx
+# github_token = "github_pat_xxx"
+
+# vault_path          = "vault"
+# basic_auth_user     = "michael"
+# basic_auth_pass     = "change-me"
+# commit_author_name  = "Michael Becze"
+# commit_author_email = "you@example.com"
+
+# use_key_vault = true
+
+# enable_easy_auth     = true
+# aad_user_upn         = "you@yourtenant.onmicrosoft.com"
+# aad_sign_in_audience = "AzureADMyOrg"  # or "AzureADandPersonalMicrosoftAccount" for a personal MSA
